@@ -1,0 +1,5 @@
+0 papier
+1 plastique
+2 carton
+3 métal&alu
+4 autres
