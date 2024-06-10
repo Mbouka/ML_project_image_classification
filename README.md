@@ -6,3 +6,4 @@
 2. Once the project is launched, select an image from a directory and the image will classified.
 ![result view](https://github.com/Mbouka/ML_project_image_classification/assets/100369693/455c1b3b-20eb-4f1f-80ca-818c97ba2085)
 
+NB: This project runs with python == 3.11 and tensorflow ==2.12.0
