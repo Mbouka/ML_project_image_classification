@@ -19,7 +19,7 @@ background-color: rgba(0,0,0,0);
 }
 </style>"""
 st.markdown(page_bg_img, unsafe_allow_html=True)
-st.title('Waste classification')
+st.title('Classement des déchets')
 
 # Disable scientific notation for clarity
 np.set_printoptions(suppress=True)
@@ -31,14 +31,14 @@ model = load_model("keras_model.h5", compile=False)
 # Load the labels
 class_names = open("labels.txt", "r").readlines()
 
-uploaded_file = st.file_uploader("Choose an image", type=['jpeg','jpg','png'])
+uploaded_file = st.file_uploader("Choisissez une image", type=['jpeg','jpg','png'])
 
 if uploaded_file is not None:
         image = Image.open(uploaded_file)
         col1, col2 = st.columns(2)
         with col1:
     
-            st.info("Your uploaded Image")
+            st.info("Votre image téléchargée")
 
             st.image(image,caption='uploaded image',use_column_width=True)
 
@@ -59,13 +59,13 @@ if uploaded_file is not None:
 
         #display results in column 2
         with col2:
-            st.info("Your Result")
-            st.write("This is a:", class_name[2:], end="")
-            st.write("Confidence Score:", confidence_score)
+            st.info("Resultat")
+            st.write("Ceci est un:", class_name[2:], end="")
+            st.write("Seuil de confiance:", confidence_score)
 
 else:
        # with col1:
-            st.write("Please upload an image file to get a prediction.")
+            st.write("Veuillez télécharger un fichier image pour obtenir une prédiction.")
     
 
 # Link for deployed model :https://teachablemachine.withgoogle.com/models/KJLVpl6aK/
